@@ -134,28 +134,23 @@ Comments start with a `#` character and have to be the first and only thing on a
 
 We advise you to use them as sparingly as you can and put the important stuff into scenarios where it can be tested.
 
-## Step Definitions
+## [Step Definitions](step_definitions.md)
 
-Step definitions sit right on the boundary between the business's domain and the programmer's domain.
-You can write them in many JVM languages and their responsibility is to translate each plain-language step in your Gherkin scenarios into concrete actions in your code.
+## Expressive Scenarios
 
-There are two sides to a step definition.
-On the outside, it translate from plain language into code, and on the inside it tells your system what to do using automation code.
+The real key to expressive scenarios is having a healthy vocabulary of domain language to use to express your requirements.
 
-## Steps and Step Definitions
+### Background
 
-Each Gherkin scenario is made up of a series of steps, written in plain language.
-On its own, a step is just documentation;
-it needs a step definition to bring it to life.
+A *background* section in a feature file allows you to specify a set of steps that are common to every scenario in the file.
+Instead of having to repeat those steps over and over for each scenario, you move them up into a `Background` element.
 
-When Cucumber tries to execute each step, it looks for a matching step definition to execute.
+Our refactoring hasn't changed the behavior of the tests at all: at runtime, the steps in the background are executed at the beginning of each scenario, just as they were before.
 
-### Matching a Step
+You can have a single `Background` element per feature file, and it must appear before any of the `Scenario` or `Scenario Outline` elements.
+Just like all the other Gherkin elements, you can give it a name, and you have space to put a multiline description before the first step.
 
-Gherkin steps are expressed in plain text.
-Cucumber scans the text of each step for patterns that it recognizes, which you define using a *regular expression*.
-
-### Creating a Step Definition
+Using `Background` element isn't always necessary, but it's often useful to improve the readability of your features by removing repetitive steps from individual scenarios.
 
 ## References
 
