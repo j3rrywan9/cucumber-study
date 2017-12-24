@@ -152,6 +152,32 @@ Just like all the other Gherkin elements, you can give it a name, and you have s
 
 Using `Background` element isn't always necessary, but it's often useful to improve the readability of your features by removing repetitive steps from individual scenarios.
 
+### Data Tables
+
+Gherkin allows us to place these details in a table right underneath a step.
+*Data Tables* give you a way to extend a Gherkin step beyond a single line to include a larger piece of data.
+
+The table starts on the line immediately following the step, and its cells are separated using the pipe character: `|`.
+You can line up the pipes using whitespace to make the table look tidy, although Cucumber doesn't mind whether you do;
+it will strip out the values in each cell, ignoring the surrounding whitespace.
+
+### Scenario Outline
+
+We can use a scenario outline to specify the steps once and then play multiple sets of values through them.
+
+We indicate *placeholders* within the scenario outline using angle brackets (`<..>`) where we want real values to be substituted.
+The scenario outline itself is useless without an `Examples` table, which lists rows of values to be substituted for each placeholder.
+
+You can have any number of `Scenario Outline` elements in a feature and any number of `Examples` tables under each scenario outline.
+Behind the scenes, Cucumber converts each row in the `Examples` table into a scenario before executing it.
+
+One of the advantages of using a scenario outline is that you can clearly see gaps in your examples.
+
+Remember that although the syntax for writing them in Gherkin is the same, these tables are totally different from the data tables we described earlier in this chapter.
+
+In a scenario outline, each row of an `Examples` table represents a whole scenario to be executed by Cucumber.
+In fact, you might want to use the keyword `Scenarios` in place of `Examples` if you find that more readable.
+
 ## References
 
 [http://repo1.maven.org/maven2/info/cukes/](http://repo1.maven.org/maven2/info/cukes/)
