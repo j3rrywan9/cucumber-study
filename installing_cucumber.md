@@ -38,8 +38,8 @@ These runners are currently supported by Cucumber:
 
 You can optionally choose to use one of several DI containers in your glue code.
 
-| --- | --- |
 | DI Container | JAR |
+| --- | --- |
 | Spring | `cucumber-spring` |
 
 You may choose not to use a DI container, but you must not place more than one DI module on the classpath.
