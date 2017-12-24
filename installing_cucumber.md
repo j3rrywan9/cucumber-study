@@ -28,7 +28,32 @@ The `cucumber-core` JAR provides a class that offers a command-line interface.
 If, however, you want to run your features from within an IDE or from a CI server, you may want to interact with the features via a common test API, such as JUnit.
 
 These runners are currently supported by Cucumber:
+
 | Runner | JAR |
 | --- | --- |
 | JUnit | `cucumber-junit` |
 | TestNG | `cucumber-testng` |
+
+### Dependency Injection Modules
+
+You can optionally choose to use one of several DI containers in your glue code.
+
+| --- | --- |
+| DI Container | JAR |
+| Spring | `cucumber-spring` |
+
+You may choose not to use a DI container, but you must not place more than one DI module on the classpath.
+
+### Version Numbers
+
+You should never mix different version numbers together.
+
+Some of the JARs that Cucumber JVM depends on are not part of the release, and their version numbers are not directly linked to the version of Cucumber JVM you are using.
+Specifically `cucumber-jvm-deps` and `gherkin` are released as required and have their own version numbers.
+
+## External Dependencies
+
+### Gherkin
+
+### Cucumber Dependencies
+
